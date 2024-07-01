@@ -110,6 +110,7 @@ public class CardController {
             }
     )
 
+    @PutMapping("/update")
     public ResponseEntity<ResponseDto> updateCard(@Valid @RequestBody CardDto dto){
 
         boolean isUpdate = cardService.updateCard(dto);
@@ -125,6 +126,7 @@ public class CardController {
         }
     }
 
+    @DeleteMapping("/delete")
     public ResponseEntity<ResponseDto> deleteCard(@RequestParam
                                                   @Pattern(regexp = "(^$|[0-9]{10})", message = "Mobile number must be 10 digits")
                                                   String mobileNumber){
