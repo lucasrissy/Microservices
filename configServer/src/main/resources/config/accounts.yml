@@ -1,0 +1,8 @@
+build:
+  version: "1.0"
+
+accounts:
+  message: "Welcome to Bank accounts related local APIs"
+  contactDetails:
+    name: "Lucas Andrade - Developer"
+    email: "rissiandrade@gmail.com"

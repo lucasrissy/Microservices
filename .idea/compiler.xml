@@ -10,6 +10,7 @@
         <module name="Loans" />
         <module name="Cards" />
         <module name="Accounts" />
+        <module name="configServer" />
       </profile>
     </annotationProcessing>
   </component>
@@ -18,6 +19,7 @@
       <module name="Accounts" options="-parameters" />
       <module name="Cards" options="-parameters" />
       <module name="Loans" options="-parameters" />
+      <module name="configServer" options="-parameters" />
     </option>
   </component>
 </project>

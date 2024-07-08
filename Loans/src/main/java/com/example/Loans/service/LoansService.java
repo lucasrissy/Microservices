@@ -7,8 +7,6 @@ import com.example.Loans.repository.LoansRepository;
 import lombok.AllArgsConstructor;
 import org.springframework.stereotype.Service;
 
-import java.util.Optional;
-
 @Service
 @AllArgsConstructor
 public class LoansService implements IServiceLoans{
@@ -21,7 +19,7 @@ public class LoansService implements IServiceLoans{
 
         Loans loans = new Loans();
 
-        if (repository.findByMobileNumber(dto.getMobileNumber())){
+        if (!repository.findByMobileNumber(dto.getMobileNumber()).isPresent()){
 
            loans = loanMapper.converToEntity(loans,dto);
 
@@ -33,6 +31,11 @@ public class LoansService implements IServiceLoans{
 
     @Override
     public LoansDto fetchLoan(String mobileNumber) {
-        return null;
+
+        if (!repository.findByMobileNumber(mobileNumber).isPresent()){
+              new Exception();
+        }
+
+        return loanMapper.converToDto(repository.findByMobileNumber(mobileNumber).get(),new LoansDto()) ;
     }
 }

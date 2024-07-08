@@ -9,7 +9,7 @@ services:
         limits:
           memory: 700m
     networks:
-      bank
+      - bank
   cards:
     image: "rissinttdata/cards:s4"
     container_name: cards-ms
@@ -20,10 +20,10 @@ services:
         limits:
           memory: 700m
     networks:
-      bank
+      - bank
   loans:
     image: "rissinttdata/loans:s4"
-    container_name: cards-ms
+    container_name: loans-ms
     ports:
       - "8090:8090"
     deploy:
@@ -31,7 +31,7 @@ services:
         limits:
           memory: 700m
     networks:
-      bank
+      - bank
 networks:
   bank:
     driver: "bridge"
