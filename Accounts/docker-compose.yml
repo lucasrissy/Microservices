@@ -1,6 +1,6 @@
 services:
   accounts:
-    image: "rissinttdata/accounts:s4"
+    image: "rissinttdata/accounts:s7"
     container_name: accounts-ms
     ports:
       - "8080:8080"
@@ -11,7 +11,7 @@ services:
     networks:
       - bank
   cards:
-    image: "rissinttdata/cards:s4"
+    image: "rissinttdata/cards:s7"
     container_name: cards-ms
     ports:
       - "9090:9090"
@@ -22,7 +22,7 @@ services:
     networks:
       - bank
   loans:
-    image: "rissinttdata/loans:s4"
+    image: "rissinttdata/loans:s7"
     container_name: loans-ms
     ports:
       - "8090:8090"
